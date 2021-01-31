@@ -23,7 +23,7 @@ const CTPROD_SUFFIX = "&src=prod"
 const CANTIRETENLBUPC = "0840042"
 const CTTENLBURL = BASE_URL +  CT_PREFIX + API_PAGE + CTSTORES + SKU_PREFIX + CANTIRETENLBUPC + CTPROD_SUFFIX;
 
-/*
+
 //Walmart 2.5lb
 axios.get(TWOPOINTFIVEREQUESTURL)
 .then((result)=>{
@@ -47,6 +47,3 @@ axios.get(CTTENLBURL)
 .then((result)=>{
     console.log(result.data);
 })
-*/
-//canadiantire 10lb
-console.log(CTTENLBURL);
