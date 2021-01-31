@@ -9,6 +9,10 @@
   "author": "pd",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.5",
+    "dotenv": "^8.2.0",
+    "pg": "^8.5.1",
     "puppeteer": "^5.5.0"
   },
   "devDependencies": {

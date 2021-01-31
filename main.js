@@ -1,1 +1,1 @@
-//main project file
+require('dotenv').config();
