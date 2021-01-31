@@ -1,20 +1,11 @@
-require('dotenv').config();
+const axios = require('axios');
+const cheerio = require('cheerio');
 
-const Client = require('pg').Client
-const client = new Client({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_DATABASE,
-    password: process.env.DB_PASS,
-    port: 5432,
+const BASE_URL = "https://stocktrack.ca/?";
+const WM_PREFIX = "s=wm"
+const UPC_PREFIX = "upc="
+
+axios.get("https://stocktrack.ca/wm/availability.php?storeId=3056|3659|5789|1052|3644|3738|5833|1177|3162|3091&upc=19173024244&src=upc")
+.then((result)=>{
+    console.log(result.data);
 })
-
-async function createVendor(vendorName, client) {
-    const db =  await client.connect();
-    const result = await db.query(`'insert into Vendors (vendor_name) values ('${vendorName}')'`, (err, res) => {
-        console.log(err, res)
-        db.end();
-    });
-}
-
-console.log(client.user);
